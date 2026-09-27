@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ritu · your body has its seasons</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:wght@500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body class="phase-follicular">
+
+  <!-- ===================== LANDING PAGE ===================== -->
+  <section id="landing" class="landing">
+    <!-- nav-toggle and nav-links kept as DIRECT children of #landing so the
+         mobile fixed-position dropdown escapes to the viewport cleanly. -->
+    <input type="checkbox" id="landingNavToggle" class="nav-toggle">
+
+    <nav class="navbar landing-navbar">
+      <a href="#landing" class="brand-mark-link" id="brandLink">
+        <span class="brand-icon" aria-hidden="true">
+          <!-- Wreath-of-leaves brand mark, redrawn from the user's Ritu moodboard -->
+          <svg viewBox="0 0 100 100" width="38" height="38">
+            <defs>
+              <path id="leaf" d="M0,-22 C7,-16 8,-6 0,0 C-8,-6 -7,-16 0,-22 Z"/>
+            </defs>
+            <g transform="translate(50,50)">
+              <use href="#leaf" fill="#d9a3aa" transform="rotate(-45) translate(0,-4)"/>
+              <use href="#leaf" fill="#8ea877" transform="rotate(45) translate(0,-4)"/>
+              <use href="#leaf" fill="#c99870" transform="rotate(135) translate(0,-4)"/>
+              <use href="#leaf" fill="#8fa7c9" transform="rotate(-135) translate(0,-4)"/>
+              <path d="M0,-5 L1.4,-1 L5,0 L1.4,1 L0,5 L-1.4,1 L-5,0 L-1.4,-1 Z" fill="#b8935c"/>
+            </g>
+          </svg>
+        </span>
+        <span class="brand-name-text">Ritu</span>
+      </a>
+
+      <div class="sign-in-box">
+        <a href="#features" class="nav-link">Features</a>
+        <a href="#stories" class="nav-link">Stories</a>
+        <a href="#seasons" class="nav-link">Seasons</a>
+        <a href="#trust" class="nav-link">Trust</a>
+        <button class="btn ghost small" id="landingSignInBtn">Log In</button>
+        <button class="btn primary small" id="landingGetStartedBtn">Sign Up</button>
+      </div>
+
+      <label class="hamburger" for="landingNavToggle" aria-label="Menu"></label>
+    </nav>
+
+    <ul class="nav-links">
+      <li class="nav-close-row"><label class="nav-close-btn" for="landingNavToggle" aria-label="Close menu">✕</label></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#stories">Stories</a></li>
+      <li><a href="#seasons">Seasons</a></li>
+      <li><a href="#trust">Trust</a></li>
+      <li class="nav-links-actions">
+        <button class="btn ghost" id="landingSignInBtnMobile">Log In</button>
+        <button class="btn primary" id="landingGetStartedBtnMobile">Sign Up</button>
+      </li>
+    </ul>
+
+    <!-- ---------- HERO — full-bleed, no pet, dynamic headline ---------- -->
+    <section class="hero">
+      <div class="hero-inner">
+        <p class="hero-eyebrow">A cycle companion · Est. 2026</p>
+        <h1 class="hero-headline">
+          A quieter way to<br>
+          <span class="rotator"><span id="rotWord">understand</span></span>
+          <span class="rotator-tail">your cycle.</span>
+        </h1>
+        <p class="hero-lede">Ritu treats your body like the four seasons it actually mirrors — Winter, Spring, Summer, Autumn — and gives you calendar, nutrition, insight and comfort tuned to whichever one you're in. Your data stays on your device.</p>
+        <div class="hero-actions">
+          <button class="btn-main" id="heroGetStartedBtn">Start tracking — free</button>
+          <a href="#features" class="btn-second">See what it does</a>
+        </div>
+        <div class="hero-trust">
+          <span class="hero-trust-item"><span class="trust-dot"></span> No account needed</span>
+          <span class="hero-trust-item"><span class="trust-dot"></span> Data stays on your device</span>
+          <span class="hero-trust-item"><span class="trust-dot"></span> Wikipedia &amp; USDA-backed content</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- TRUST BAR — press-style row of small credibility items ---------- -->
+    <section class="trust-bar" id="trust">
+      <div class="trust-inner">
+        <div class="trust-cell">
+          <span class="trust-num">4</span>
+          <div class="trust-body">
+            <p class="trust-title">Live public APIs</p>
+            <p class="trust-sub">USDA nutrition · Wikipedia · Google Gemini · Sunrise&nbsp;&amp; Sunset — every fact traceable to source.</p>
+          </div>
+        </div>
+        <div class="trust-cell">
+          <span class="trust-num">0</span>
+          <div class="trust-body">
+            <p class="trust-title">Bytes leave your browser</p>
+            <p class="trust-sub">Your logs, cycles and chat live in this browser's local storage — never on a server we control.</p>
+          </div>
+        </div>
+        <div class="trust-cell">
+          <span class="trust-num">100%</span>
+          <div class="trust-body">
+            <p class="trust-title">Open, inspectable code</p>
+            <p class="trust-sub">Plain HTML/CSS/JS — every date-math call, every API call is right there for a doctor or a dev to check.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- FEATURE CARDS — image-style, ZO Hotel pattern ---------- -->
+    <section class="landing-section" id="features">
+      <div class="section-head">
+        <p class="section-eyebrow">The features</p>
+        <h2 class="section-title">Everything your cycle actually needs</h2>
+        <p class="section-lede">Six things it does well — pick one to see how it works.</p>
+      </div>
+
+      <div class="card-grid" id="featureGrid">
+        <article class="feat-card" data-feat="cycle">
+          <div class="feat-image" data-art="cycle">
+            <span class="feat-badge">Live tracker</span>
+          </div>
+          <div class="feat-body">
+            <h3>Understands your cycle</h3>
+            <p>Phase, fertile window and a countdown that adapt to your own history — not a fixed 28 days.</p>
+            <p class="feat-meta">Menstrual · Follicular · Ovulation · Luteal</p>
+          </div>
+        </article>
+
+        <article class="feat-card" data-feat="mottu">
+          <div class="feat-image" data-art="mottu">
+            <span class="feat-badge">Always in the corner</span>
+          </div>
+          <div class="feat-body">
+            <h3>Meet Mottu — your companion</h3>
+            <p>A gentle 3D pet that sits in the corner of every screen. Ask about your diet, symptoms, anything — Mottu is trained on your current phase.</p>
+            <p class="feat-meta">Powered by Google Gemini</p>
+          </div>
+        </article>
+
+        <article class="feat-card" data-feat="nutrition">
+          <div class="feat-image" data-art="nutrition">
+            <span class="feat-badge">USDA-backed</span>
+          </div>
+          <div class="feat-body">
+            <h3>Feeds you right</h3>
+            <p>Phase-matched foods with real nutrient values from the USDA database, plus a fresh recipe on request.</p>
+            <p class="feat-meta">Iron on your period · Magnesium before it · Hydration around ovulation</p>
+          </div>
+        </article>
+
+        <article class="feat-card" data-feat="learn">
+          <div class="feat-image" data-art="learn">
+            <span class="feat-badge">Wikipedia articles</span>
+          </div>
+          <div class="feat-body">
+            <h3>Learns with you</h3>
+            <p>An auto-loaded article about your current phase, plus lookup for any condition or topic in plain language.</p>
+            <p class="feat-meta">PCOS · Dysmenorrhea · Iron deficiency · Endometriosis</p>
+          </div>
+        </article>
+
+        <article class="feat-card" data-feat="dejavu">
+          <div class="feat-image" data-art="dejavu">
+            <span class="feat-badge">Pattern recall</span>
+          </div>
+          <div class="feat-body">
+            <h3>Remembers with you</h3>
+            <p>Before something repeats, you'll see it: "Last cycle, around day 19, you logged cramps too — go easy today."</p>
+            <p class="feat-meta">Cross-references your own logs, no ML needed</p>
+          </div>
+        </article>
+
+        <article class="feat-card" data-feat="comfort">
+          <div class="feat-image" data-art="comfort">
+            <span class="feat-badge">Not just data</span>
+          </div>
+          <div class="feat-body">
+            <h3>Comfort ideas, on the days you need them</h3>
+            <p>A hot compress on cramp days. An early night in the luteal phase. Small, kind, phase-matched suggestions.</p>
+            <p class="feat-meta">Curated locally, warmed up by Gemini if you add a key</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ---------- INTERACTIVE CYCLE-PREVIEW ---------- -->
+    <section class="landing-section demo-section" id="demo">
+      <div class="section-head">
+        <p class="section-eyebrow">Try it right here</p>
+        <h2 class="section-title">Move the marker. Watch the seasons change.</h2>
+        <p class="section-lede">This is the same phase math the real app uses. Nudge the slider to see how each cycle day becomes a phase.</p>
+      </div>
+
+      <div class="demo-card">
+        <div class="demo-ring" id="demoRing" aria-hidden="true">
+          <!-- Rendered by JS: a 360° ring of dots color-coded by phase, with a moving marker -->
+        </div>
+        <div class="demo-info">
+          <p class="demo-phase-label" id="demoPhaseLabel">Follicular · Spring</p>
+          <p class="demo-day-label" id="demoDayLabel">Day 7 of 28</p>
+          <p class="demo-desc" id="demoDesc">Energy is quietly rebuilding as estrogen rises — good window for protein and fresh food.</p>
+          <label class="demo-slider-row">
+            <span>Day</span>
+            <input type="range" min="1" max="28" value="7" id="demoDaySlider" />
+            <span id="demoDayValue">7</span>
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- SEASONS ---------- -->
+    <section class="landing-section seasons-section" id="seasons">
+      <div class="section-head">
+        <p class="section-eyebrow">The four seasons</p>
+        <h2 class="section-title">Your body has its seasons</h2>
+        <p class="section-lede">Each one asks for something a little different. Ritu knows that.</p>
+      </div>
+      <div class="season-strip">
+        <div class="season-chip" data-season="menstrual"><strong>Winter</strong><span>Menstrual</span><em>rest &amp; reflect</em></div>
+        <div class="season-chip" data-season="follicular"><strong>Spring</strong><span>Follicular</span><em>a fresh start</em></div>
+        <div class="season-chip" data-season="ovulation"><strong>Summer</strong><span>Ovulation</span><em>in your flow</em></div>
+        <div class="season-chip" data-season="luteal"><strong>Autumn</strong><span>Luteal</span><em>a gentle shift</em></div>
+      </div>
+    </section>
+
+    <!-- ---------- TESTIMONIALS CAROUSEL ---------- -->
+    <section class="landing-section stories-section" id="stories">
+      <div class="section-head">
+        <p class="section-eyebrow">Early users</p>
+        <h2 class="section-title">What people say about tracking with Ritu</h2>
+      </div>
+      <div class="stories-panel">
+        <blockquote class="story" id="storyBox">
+          <p class="story-quote" id="storyQuote">Loading...</p>
+          <footer class="story-meta">
+            <strong id="storyName">—</strong>
+            <span id="storyDetail">—</span>
+          </footer>
+        </blockquote>
+        <div class="stories-nav">
+          <button class="story-arrow" id="storyPrev" aria-label="Previous story">‹</button>
+          <div class="story-dots" id="storyDots"></div>
+          <button class="story-arrow" id="storyNext" aria-label="Next story">›</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- CTA ---------- -->
+    <section class="landing-section cta-section">
+      <div class="cta-panel">
+        <h2 class="section-title cta-title">Ready to start listening to your body?</h2>
+        <p class="section-lede">No sign-up needed to try. Nothing leaves this browser until you say so.</p>
+        <button class="btn-main" id="ctaGetStartedBtn">Start tracking — free</button>
+      </div>
+    </section>
+
+    <footer class="landing-footer">
+      <div class="footer-brand">
+        <span class="brand-icon" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="26" height="26">
+            <g transform="translate(50,50)">
+              <path d="M0,-22 C7,-16 8,-6 0,0 C-8,-6 -7,-16 0,-22 Z" fill="#d9a3aa" transform="rotate(-45) translate(0,-4)"/>
+              <path d="M0,-22 C7,-16 8,-6 0,0 C-8,-6 -7,-16 0,-22 Z" fill="#8ea877" transform="rotate(45) translate(0,-4)"/>
+              <path d="M0,-22 C7,-16 8,-6 0,0 C-8,-6 -7,-16 0,-22 Z" fill="#c99870" transform="rotate(135) translate(0,-4)"/>
+              <path d="M0,-22 C7,-16 8,-6 0,0 C-8,-6 -7,-16 0,-22 Z" fill="#8fa7c9" transform="rotate(-135) translate(0,-4)"/>
+            </g>
+          </svg>
+        </span>
+        <span>Ritu · your body has its seasons</span>
+      </div>
+      <p class="muted small">A cycle-tracking &amp; self-care companion — not a medical device. See a clinician for anything serious or persistent.</p>
+    </footer>
+  </section>
+
+  <!-- ===================== ONBOARDING ===================== -->
+  <section id="onboarding" class="onboarding" hidden>
+    <div class="onboarding-brand-panel">
+      <div class="pet-3d onboarding-pet-wrap" id="obPetWrap">
+        <span class="pet-shadow"></span>
+        <img class="pet-img" src="assets/pet.webp" alt="Mottu" />
+      </div>
+      <div class="onboarding-brand-mark">
+        <svg viewBox="0 0 64 64" width="30" height="30" aria-hidden="true">
+          <g transform="translate(32,32)">
+            <path d="M0,-26 C7,-19 9,-9 0,-1 C-9,-9 -7,-19 0,-26 Z" fill="#f2aab6" transform="rotate(-42)"/>
+            <path d="M0,-26 C7,-19 9,-9 0,-1 C-9,-9 -7,-19 0,-26 Z" fill="#8cc07b" transform="rotate(48)"/>
+            <path d="M0,-26 C7,-19 9,-9 0,-1 C-9,-9 -7,-19 0,-26 Z" fill="#de9755" transform="rotate(138)"/>
+            <path d="M0,-26 C7,-19 9,-9 0,-1 C-9,-9 -7,-19 0,-26 Z" fill="#93aedf" transform="rotate(228)"/>
+            <path d="M0,-5 L1.8,-0.8 L6,0 L1.8,0.8 L0,5 L-1.8,0.8 L-6,0 L-1.8,-0.8 Z" fill="#e78d93"/>
+          </g>
+        </svg>
+        <span>Ritu</span>
+      </div>
+      <p class="onboarding-brand-tag">your body has its seasons</p>
+      <div class="steps-track"><div id="stepFill" class="steps-fill"></div></div>
+    </div>
+
+    <div class="onboarding-content">
+      <!-- Step 0: welcome -->
+      <div class="ob-step" data-step="0">
+        <h2>Hi, I'm Mottu 🌱</h2>
+        <p>I'll keep you company through every season of your cycle — resting when you rest, blooming when you bloom. Let's set a few things up so I can look after you properly.</p>
+        <button class="btn primary" data-next>Let's begin</button>
+      </div>
+
+      <!-- Step 1: age group -->
+      <div class="ob-step" data-step="1" hidden>
+        <h2>Which age group are you in?</h2>
+        <p class="muted">This helps me tailor nutrition and phase-length assumptions.</p>
+        <div class="choice-grid" data-field="ageGroup">
+          <button class="choice" data-value="under18">Under 18</button>
+          <button class="choice" data-value="18-24">18 – 24</button>
+          <button class="choice" data-value="25-34">25 – 34</button>
+          <button class="choice" data-value="35-44">35 – 44</button>
+          <button class="choice" data-value="45plus">45+</button>
+        </div>
+        <div class="ob-nav">
+          <button class="btn ghost" data-back>Back</button>
+          <button class="btn primary" data-next disabled>Continue</button>
+        </div>
+      </div>
+
+      <!-- Step 2: cycle length -->
+      <div class="ob-step" data-step="2" hidden>
+        <h2>How many days between periods, usually?</h2>
+        <p class="muted">Counting from the first day of one period to the first day of the next. A guess is fine — you can refine this later.</p>
+        <div class="slider-row">
+          <input type="range" min="18" max="45" value="28" id="cycleLengthRange" />
+          <div class="slider-value"><span id="cycleLengthValue">28</span> days</div>
+        </div>
+        <label class="checkbox-row">
+          <input type="checkbox" id="irregularCheck" />
+          <span>My cycle is irregular / unpredictable</span>
+        </label>
+        <div id="goalWrap" class="field-block" hidden>
+          <label for="goalText">What would you like to understand or change about your cycle?</label>
+          <textarea id="goalText" rows="3" placeholder="e.g. figure out why it's so unpredictable, reduce PMS mood swings, track it properly for the first time..."></textarea>
+        </div>
+        <div class="ob-nav">
+          <button class="btn ghost" data-back>Back</button>
+          <button class="btn primary" data-next>Continue</button>
+        </div>
+      </div>
+
+      <!-- Step 3: period length -->
+      <div class="ob-step" data-step="3" hidden>
+        <h2>How many days does your period usually last?</h2>
+        <div class="slider-row">
+          <input type="range" min="2" max="10" value="5" id="periodLengthRange" />
+          <div class="slider-value"><span id="periodLengthValue">5</span> days</div>
+        </div>
+        <div class="ob-nav">
+          <button class="btn ghost" data-back>Back</button>
+          <button class="btn primary" data-next>Continue</button>
+        </div>
+      </div>
+
+      <!-- Step 4: last period date -->
+      <div class="ob-step" data-step="4" hidden>
+        <h2>When did your last period start?</h2>
+        <p class="muted">This is how I'll work out which season you're in today.</p>
+        <input type="date" id="lastPeriodInput" />
+        <div class="ob-nav">
+          <button class="btn ghost" data-back>Back</button>
+          <button class="btn primary" data-next disabled>Continue</button>
+        </div>
+      </div>
+
+      <!-- Step 5: name -->
+      <div class="ob-step" data-step="5" hidden>
+        <h2>Lastly — what should Mottu call you?</h2>
+        <input type="text" id="nameInput" placeholder="Your name" maxlength="24" />
+        <div class="ob-nav">
+          <button class="btn ghost" data-back>Back</button>
+          <button class="btn primary" id="finishOnboarding" data-next>Enter Ritu</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== MAIN APP ===================== -->
+  <div id="app" class="app" hidden>
+
+    <div class="navbar" id="navbarWrap">
+      <div class="topbar-brand">
+        <svg class="brand-mark" viewBox="0 0 64 64" width="26" height="26" aria-hidden="true">
+          <g transform="translate(32,32)">
+            <path d="M0,-26 C7,-19 9,-9 0,-1 C-9,-9 -7,-19 0,-26 Z" fill="#f2aab6" transform="rotate(-42)"/>
+            <path d="M0,-26 C7,-19 9,-9 0,-1 C-9,-9 -7,-19 0,-26 Z" fill="#8cc07b" transform="rotate(48)"/>
+            <path d="M0,-26 C7,-19 9,-9 0,-1 C-9,-9 -7,-19 0,-26 Z" fill="#de9755" transform="rotate(138)"/>
+            <path d="M0,-26 C7,-19 9,-9 0,-1 C-9,-9 -7,-19 0,-26 Z" fill="#93aedf" transform="rotate(228)"/>
+            <path d="M0,-5 L1.8,-0.8 L6,0 L1.8,0.8 L0,5 L-1.8,0.8 L-6,0 L-1.8,-0.8 Z" fill="#e78d93"/>
+          </g>
+        </svg>
+        <span class="topbar-title">Ritu</span>
+      </div>
+      <div class="navbar-action">
+        <button class="icon-btn person-btn" id="settingsBtn" title="Account &amp; settings" aria-label="Account and settings">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><circle cx="12" cy="9" r="3.5"/><path d="M5 20c1.2-3.6 4-5 7-5s5.8 1.4 7 5"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- kept as a sibling of .navbar, not nested inside it — a fixed-position
+         descendant needs to stay shallow to reliably escape to the viewport -->
+    <nav class="tabs" id="tabs">
+      <button class="tab active" data-tab="home">
+        <span class="tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11.5L12 5l8 6.5"/><path d="M6 10v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-9"/><path d="M10 20v-5.5h4V20"/></svg></span>
+        <span class="tab-label">Home</span>
+      </button>
+      <button class="tab" data-tab="calendar">
+        <span class="tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="3.5"/><path d="M3.5 10h17"/><path d="M8 3v4"/><path d="M16 3v4"/><circle cx="16.5" cy="7.2" r="1" fill="currentColor" stroke="none"/></svg></span>
+        <span class="tab-label">Calendar</span>
+      </button>
+      <button class="tab" data-tab="mottu">
+        <span class="tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c9.5 0 13.5-6.5 13.5-15 0 0-12 0-13.5 8.5-1 4.5 0 6.5 0 6.5z"/><path d="M5.5 18.5c2-4.5 5.5-8 10-10"/></svg></span>
+        <span class="tab-label">Mottu</span>
+      </button>
+      <button class="tab" data-tab="nutrition">
+        <span class="tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11.5h16a8 8 0 0 1-16 0z"/><path d="M12 11.5V5"/><path d="M9 6.5c0-1.1 1.3-2.5 3-2.5s3 1.4 3 2.5"/></svg></span>
+        <span class="tab-label">Nutrition</span>
+      </button>
+      <button class="tab" data-tab="insights">
+        <span class="tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19V13"/><path d="M12 19V8"/><path d="M19 19v-5"/></svg></span>
+        <span class="tab-label">Insights</span>
+      </button>
+    </nav>
+
+    <!-- ---------- HOME ---------- -->
+    <main class="view active" data-view="home">
+      <section class="season-hero">
+        <div class="season-hero-info">
+          <p class="season-label" id="seasonLabel">Follicular · Spring</p>
+          <h2 class="season-day" id="cycleDayText">Day 1 of your cycle</h2>
+          <p class="season-desc" id="seasonDesc">Loading...</p>
+          <div class="season-meta">
+            <div class="meta-chip"><span id="nextPeriodCountdown">–</span><small>until next period</small></div>
+            <div class="meta-chip" id="fertileChip" hidden><span>Fertile window</span><small>be mindful today</small></div>
+          </div>
+          <button class="btn small outline" id="logTodayBtn">Log how today feels</button>
+        </div>
+        <div class="season-hero-orb" id="seasonOrb" aria-hidden="true"></div>
+      </section>
+
+      <section class="pet-preview" id="petPreviewCard">
+        <div class="pet-avatar pet-3d" id="petAvatarHome">
+          <span class="pet-shadow"></span>
+          <img src="assets/pet.webp" alt="Mottu" class="pet-img" />
+          <span class="pet-badge" id="petBadgeHome"></span>
+        </div>
+        <div class="pet-preview-text">
+          <p class="pet-name">Mottu</p>
+          <p class="pet-line" id="petLineHome">Getting to know your rhythm...</p>
+        </div>
+        <button class="btn small primary" data-tab-jump="mottu">Visit Mottu</button>
+      </section>
+
+      <section class="dejavu-card" id="dejavuCard" hidden>
+        <span class="dejavu-icon">✨</span>
+        <p id="dejavuText"></p>
+      </section>
+
+      <section class="mini-cal">
+        <div class="mini-cal-head">
+          <h3>This week</h3>
+        </div>
+        <div class="mini-cal-strip" id="miniCalStrip"></div>
+      </section>
+    </main>
+
+    <!-- ---------- CALENDAR ---------- -->
+    <main class="view" data-view="calendar">
+      <section class="calendar-panel">
+        <div class="cal-nav">
+          <button class="icon-btn" id="calPrev">‹</button>
+          <h3 id="calMonthLabel">Month</h3>
+          <button class="icon-btn" id="calNext">›</button>
+        </div>
+        <div class="cal-weekdays">
+          <span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span>
+        </div>
+        <div class="cal-grid" id="calGrid"></div>
+        <div class="cal-legend">
+          <span><i class="dot dot-period"></i> Period</span>
+          <span><i class="dot dot-fertile"></i> Fertile window</span>
+          <span><i class="dot dot-predicted"></i> Predicted</span>
+          <span><i class="dot dot-logged"></i> Logged</span>
+        </div>
+      </section>
+
+      <section class="day-detail" id="dayDetail" hidden>
+        <h3 id="dayDetailTitle">Day</h3>
+        <div class="log-form">
+          <div class="log-group">
+            <label>Flow</label>
+            <div class="pill-row" data-field="flow">
+              <button class="pill" data-value="none">None</button>
+              <button class="pill" data-value="spotting">Spotting</button>
+              <button class="pill" data-value="light">Light</button>
+              <button class="pill" data-value="medium">Medium</button>
+              <button class="pill" data-value="heavy">Heavy</button>
+            </div>
+          </div>
+          <div class="log-group">
+            <label>Mood</label>
+            <div class="pill-row" data-field="mood">
+              <button class="pill" data-value="happy">🙂 Good</button>
+              <button class="pill" data-value="calm">😌 Calm</button>
+              <button class="pill" data-value="low">😔 Low</button>
+              <button class="pill" data-value="irritable">😤 Irritable</button>
+              <button class="pill" data-value="anxious">😟 Anxious</button>
+            </div>
+          </div>
+          <div class="log-group">
+            <label>Symptoms</label>
+            <div class="pill-row" data-field="symptoms" data-multi="true">
+              <button class="pill" data-value="cramps">Cramps</button>
+              <button class="pill" data-value="headache">Headache</button>
+              <button class="pill" data-value="bloating">Bloating</button>
+              <button class="pill" data-value="fatigue">Fatigue</button>
+              <button class="pill" data-value="acne">Acne</button>
+              <button class="pill" data-value="cravings">Cravings</button>
+              <button class="pill" data-value="backache">Backache</button>
+              <button class="pill" data-value="tender">Tender breasts</button>
+            </div>
+          </div>
+          <div class="log-group">
+            <label for="dayNotes">Notes</label>
+            <textarea id="dayNotes" rows="2" placeholder="Anything else worth remembering..."></textarea>
+          </div>
+          <div class="log-actions">
+            <button class="btn primary" id="saveLogBtn">Save entry</button>
+            <button class="btn ghost" id="markPeriodStartBtn">Mark period started this day</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ---------- MOTTU (pet detail) ---------- -->
+    <main class="view" data-view="mottu">
+      <section class="pet-hero">
+        <div class="pet-hero-avatar pet-3d" id="petAvatarBig">
+          <span class="pet-shadow"></span>
+          <img src="assets/pet.webp" alt="Mottu" class="pet-img" />
+          <span class="pet-badge" id="petBadgeBig"></span>
+        </div>
+        <h2 id="petMoodTitle">Resting</h2>
+        <p id="petMoodDesc" class="muted">Mottu mirrors whatever season your body is in right now.</p>
+
+        <div class="pet-stats">
+          <div class="pet-stat">
+            <p class="pet-stat-label">Hungry for</p>
+            <p class="pet-stat-value" id="petHungerFood">–</p>
+          </div>
+          <div class="pet-stat">
+            <p class="pet-stat-label">Right now</p>
+            <p class="pet-stat-value" id="petSkyState">–</p>
+          </div>
+        </div>
+
+        <div class="comfort-word" id="comfortWordCard">
+          <p class="comfort-word-label">Today's word</p>
+          <p class="comfort-word-text" id="comfortWordText">...</p>
+        </div>
+
+        <button class="btn primary" id="openChatFromTab">💬 Chat with Mottu</button>
+      </section>
+    </main>
+
+    <!-- ---------- NUTRITION ---------- -->
+    <main class="view" data-view="nutrition">
+      <section class="nutrition-panel">
+        <h2>Eating for your <span id="nutritionPhaseName">phase</span></h2>
+        <p class="muted" id="nutritionPhaseBlurb">Loading suggestions...</p>
+        <div class="food-grid" id="foodGrid"></div>
+
+        <div class="food-lookup">
+          <h3>Look up any food</h3>
+          <form id="foodSearchForm" class="food-search-row">
+            <input type="text" id="foodSearchInput" placeholder="e.g. spinach, lentils, dark chocolate" />
+            <button class="btn primary small" type="submit">Search</button>
+          </form>
+          <div id="foodLookupResult" class="food-lookup-result"></div>
+        </div>
+
+        <div class="wiki-section">
+          <h3>Learn about <span id="wikiPhaseName">this phase</span></h3>
+          <div id="wikiPhaseCard" class="wiki-card">Loading article…</div>
+
+          <h3>Look up a condition or topic</h3>
+          <p class="muted small">Powered by Wikipedia — try "PCOS", "Iron deficiency anemia", "Dysmenorrhea"...</p>
+          <form id="wikiSearchForm" class="food-search-row">
+            <input type="text" id="wikiSearchInput" placeholder="e.g. PCOS, endometriosis, magnesium" />
+            <button class="btn primary small" type="submit">Search</button>
+          </form>
+          <div id="wikiSearchResult" class="wiki-card"></div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ---------- INSIGHTS ---------- -->
+    <main class="view" data-view="insights">
+      <section class="insights-panel">
+        <h2>Insights</h2>
+        <div class="insight-cards" id="insightCards"></div>
+
+        <h3>Cycle length history</h3>
+        <div class="chart-wrap">
+          <svg id="cycleChart" viewBox="0 0 320 140" preserveAspectRatio="none"></svg>
+        </div>
+        <p class="muted small" id="chartCaption">Log a few cycles to see your trend here.</p>
+      </section>
+    </main>
+
+    <!-- ---------- FLOATING PET WIDGET (always visible) ---------- -->
+    <button id="petFab" class="pet-fab pet-3d" aria-label="Chat with Mottu">
+      <span class="pet-shadow pet-shadow-fab"></span>
+      <img src="assets/pet.webp" alt="Mottu" class="pet-img pet-fab-img" />
+    </button>
+
+    <div id="petCloud" class="pet-cloud" hidden>
+      <div class="pet-cloud-head">
+        <div class="pet-cloud-title">
+          <strong>Mottu</strong>
+          <span id="cloudMoodLine" class="muted small">...</span>
+        </div>
+        <button class="icon-btn" id="closeCloud" aria-label="Close">✕</button>
+      </div>
+      <div class="chat-log" id="chatLog"></div>
+      <div class="quick-actions">
+        <button class="btn outline small recipe-btn" id="recipeBtn">🍳 Recipe for today</button>
+        <button class="btn outline small recipe-btn" id="comfortBtn">🕯️ Comfort ideas</button>
+      </div>
+      <form class="chat-input-row" id="chatForm">
+        <input type="text" id="chatInput" placeholder="Ask Mottu about your diet, symptoms, anything..." autocomplete="off" />
+        <button class="btn primary" type="submit">Send</button>
+      </form>
+      <p class="chat-hint" id="chatHint" hidden>Add a Gemini API key in Settings for thoughtful replies — for now you'll get gentle fallback answers.</p>
+    </div>
+  </div>
+
+  <!-- ===================== SETTINGS DRAWER ===================== -->
+  <div id="settingsOverlay" class="overlay" hidden></div>
+  <aside id="settingsDrawer" class="drawer" hidden>
+    <div class="drawer-head">
+      <h3>Settings</h3>
+      <button class="icon-btn" id="closeSettings">✕</button>
+    </div>
+    <div class="drawer-body">
+      <div class="field-block theme-toggle-row">
+        <label>Appearance</label>
+        <div class="theme-toggle" role="radiogroup" aria-label="Theme">
+          <button class="theme-opt" data-theme="light" role="radio" aria-checked="true">
+            <span aria-hidden="true">☀︎</span> Light
+          </button>
+          <button class="theme-opt" data-theme="dark" role="radio" aria-checked="false">
+            <span aria-hidden="true">☾</span> Dark
+          </button>
+        </div>
+      </div>
+      <hr />
+      <div class="field-block">
+        <label for="setName">Your name</label>
+        <input type="text" id="setName" />
+      </div>
+      <div class="field-block">
+        <label for="setCycleLength">Average cycle length: <span id="setCycleLengthVal"></span> days</label>
+        <input type="range" min="18" max="45" id="setCycleLength" />
+      </div>
+      <div class="field-block">
+        <label for="setPeriodLength">Average period length: <span id="setPeriodLengthVal"></span> days</label>
+        <input type="range" min="2" max="10" id="setPeriodLength" />
+      </div>
+      <div class="field-block">
+        <label for="setLastPeriod">Last period start date</label>
+        <input type="date" id="setLastPeriod" />
+      </div>
+      <hr />
+      <div class="field-block">
+        <label for="geminiKeyInput">Gemini API key <small>(stored only in this browser)</small></label>
+        <input type="password" id="geminiKeyInput" placeholder="AIza..." />
+        <p class="muted small">Get a free key at ai.google.dev/api. Used only to power Mottu's chat and recipe replies — never sent anywhere else.</p>
+      </div>
+      <div class="field-block">
+        <label for="usdaKeyInput">USDA FoodData Central key <small>(optional)</small></label>
+        <input type="text" id="usdaKeyInput" placeholder="DEMO_KEY is used if left blank" />
+      </div>
+      <hr />
+      <div class="field-block demo-tools">
+        <label>Demo tools</label>
+        <p class="muted small">For showing phase changes live without waiting real days.</p>
+        <div class="demo-btn-row">
+          <button class="btn ghost small" id="demoMinus">− 1 day</button>
+          <span id="demoOffsetLabel">+0 days</span>
+          <button class="btn ghost small" id="demoPlus">+ 1 day</button>
+        </div>
+        <button class="btn ghost small" id="seedDemoBtn">Seed sample cycle history</button>
+        <button class="btn ghost small danger" id="resetAppBtn">Reset all data</button>
+      </div>
+      <button class="btn primary" id="saveSettingsBtn">Save changes</button>
+    </div>
+  </aside>
+
+  <div id="toast" class="toast" hidden></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
